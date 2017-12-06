@@ -30,7 +30,7 @@ public void draw()
  	asteroids.get(i).move();
  	if (dist(Falcon.getX(),Falcon.getY(),asteroids.get(i).getX(), asteroids.get(i).getY() ) <30)
  	{
- 		asteroids.remove(i).show();
+ 		asteroids.remove(i);
  	}
  	}
 }
