@@ -1,14 +1,13 @@
 Spaceship Falcon = new Spaceship();
-Asteroid [] potato;
 Stars [] aBunch;
+ArrayList <Asteroid> asteroids = new ArrayList<Asteroid>();
 public void setup() 
 {
  size(1000,1000);
  background(0);
- potato = new Asteroid[25];
- for (int i = 0; i < potato.length; i++)
+ for (int i = 0; i < 25; i++)
  {
- 	potato[i] = new Asteroid();
+ 	asteroids.add(new Asteroid());
  }
  aBunch = new Stars[(int)(Math.random()*200)+100];
  for (int i = 0; i < aBunch.length; i++)
@@ -25,10 +24,14 @@ public void draw()
   	{
     aBunch[i].show();
 	}
-	for (int i = 0; i < potato.length; i++)
+	for (int i = 0; i < asteroids.size(); i++)
  	{
- 	potato[i].show();
- 	potato[i].move();
+ 	asteroids.get(i).show();
+ 	asteroids.get(i).move();
+ 	if (dist(Falcon.getX(),Falcon.getY(),asteroids.get(i).getX(), asteroids.get(i).getY() ) <30)
+ 	{
+ 		asteroids.remove(i).show();
+ 	}
  	}
 }
 public void keyPressed()
