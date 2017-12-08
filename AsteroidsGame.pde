@@ -26,12 +26,15 @@ public void draw()
 	}
 	for (int i = 0; i < asteroids.size(); i++)
  	{
- 	asteroids.get(i).show();
- 	asteroids.get(i).move();
- 	if (dist(Falcon.getX(),Falcon.getY(),asteroids.get(i).getX(), asteroids.get(i).getY() ) <30)
- 	{
- 		asteroids.remove(i);
- 	}
+	 	asteroids.get(i).show();
+	 	asteroids.get(i).move();
+	 	if(dist(Falcon.getX(),Falcon.getY(),asteroids.get(i).getX(),asteroids.get(i).getY()) < 30)
+	 	//if (dist(Falcon.getX(),Falcon.getY(),asteroids.get(i).getX(), asteroids.get(i).getY() ) <30)
+	 	//if(dist(Falcon.getX(),Falcon.getY(),asteroids.get(i).getX(),asteroids.get(i).getY())<30)
+	 	{
+	 	 	asteroids.remove(i);
+	 		//println("hi");
+	 	}
  	}
 }
 public void keyPressed()
